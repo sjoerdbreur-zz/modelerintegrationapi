@@ -2363,7 +2363,7 @@
     },
     {
       "_postman_id": "dea63592-1ca6-bf92-1d44-bef0f3844151",
-      "name": "SetStoryStatusV3 copy",
+      "name": "SetStoryStatus",
       "description": "",
       "item": [
         {

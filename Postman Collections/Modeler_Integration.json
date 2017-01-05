@@ -1097,7 +1097,7 @@
         },
         {
           "_postman_id": "216de539-6db4-43d3-f7b0-55c71a8aa4a4",
-          "name": "SetStoryStatusV3 - Failure invalid status copy",
+          "name": "SetStoryStatusV3 - Failure Missing ModelerVersion",
           "event": [
             {
               "listen": "test",

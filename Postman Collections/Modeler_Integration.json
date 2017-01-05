@@ -2560,7 +2560,7 @@
         },
         {
           "_postman_id": "82f2b125-f17b-c7b3-509d-acf29a3231c5",
-          "name": "SetStoryStatusV3 - Failure Not Existing User",
+          "name": "SetStoryStatus - Failure Not Existing User",
           "event": [
             {
               "listen": "test",

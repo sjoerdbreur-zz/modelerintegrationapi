@@ -1976,7 +1976,7 @@
         },
         {
           "_postman_id": "3a050ffe-f70b-ef54-61ad-4f8e54d89feb",
-          "name": "GetStoriesV3 - Failure Missing ProjectID",
+          "name": "GetStories - Failure Missing ProjectID",
           "event": [
             {
               "listen": "test",

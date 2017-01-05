@@ -254,7 +254,7 @@
         },
         {
           "_postman_id": "8b1805a5-66b3-c33f-11f5-fce2d6def249",
-          "name": "GetProjectsV3 - Failure Missing ModelerVersion copy",
+          "name": "GetProjectsV3 - ModelerVersion ignored in older version",
           "event": [
             {
               "listen": "test",

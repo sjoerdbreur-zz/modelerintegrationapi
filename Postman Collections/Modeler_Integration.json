@@ -453,7 +453,7 @@
         },
         {
           "_postman_id": "c5063100-4a34-e3fe-0abb-ad2eee75272d",
-          "name": "GetProjectsV2 - Failure Missing Password",
+          "name": "GetProjects - Failure Missing Password",
           "event": [
             {
               "listen": "test",

@@ -947,7 +947,7 @@
         },
         {
           "_postman_id": "1518386d-05ed-d4d3-eff9-984e3369cdf8",
-          "name": "CreateProjectV3 - Failure Incorrect User Password",
+          "name": "CreateNewProjectV3 - Failure Incorrect User Password",
           "event": [
             {
               "listen": "test",

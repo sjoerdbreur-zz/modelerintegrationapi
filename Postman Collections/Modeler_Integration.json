@@ -1188,7 +1188,7 @@
         },
         {
           "_postman_id": "c3d8ce05-0ca9-b1aa-e090-e5c95399ee0b",
-          "name": "CreateNewProjectV3 - Happy Path copy",
+          "name": "CreateNewProjectV3 - Failure Empty Project Name",
           "event": [
             {
               "listen": "test",

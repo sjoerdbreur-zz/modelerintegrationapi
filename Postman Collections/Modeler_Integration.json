@@ -911,7 +911,7 @@
                   "var validResponse = true;",
                   "",
                   "var res = jsonObject || {};",
-                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:CreateNewProjectV3Response\", \"Project\"];",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:CreateNewProjectV3Response\", \"Project\", \"FeatureFlags\", \"FeatureFlag\"];",
                   "keys.forEach(function (k) {",
                   "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
                   "        res = res[k];",

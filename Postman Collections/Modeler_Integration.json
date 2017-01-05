@@ -1682,7 +1682,7 @@
         },
         {
           "_postman_id": "8fd19da7-0670-6edc-bfc3-fbf85cc88bd5",
-          "name": "CreateNewProjectV3 - Failure Empty Project Name",
+          "name": "CreateNewProject - Failure Empty Project Name",
           "event": [
             {
               "listen": "test",

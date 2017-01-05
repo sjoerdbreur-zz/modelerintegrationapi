@@ -989,6 +989,12 @@
       ]
     },
     {
+      "_postman_id": "b961bfc1-190c-1c69-1f54-59f1b9058045",
+      "name": "SetStoryStatusV3",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "bdcf4c50-7c6a-2894-7b04-6c562e388a79",
       "name": "GetProjectsV3",
       "description": "",
@@ -1897,7 +1903,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states ModelerVersion missing\"] = res.faultstring === \"Missing value for ModelerVersion\""
+                  "tests[\"Faultstring states Internal Server Error\"] = res.faultstring === \"Internal server error\""
                 ]
               }
             }

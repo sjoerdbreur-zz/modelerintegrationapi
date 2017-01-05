@@ -1241,7 +1241,7 @@
         },
         {
           "_postman_id": "13eb7581-5d91-d27f-0388-b6a354809de2",
-          "name": "SetStoryStatusV3 - Failure Missing ModelerVersion copy",
+          "name": "SetStoryStatusV3 - Failure Missing StoryNr",
           "event": [
             {
               "listen": "test",

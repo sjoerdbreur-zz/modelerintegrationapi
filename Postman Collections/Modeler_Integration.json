@@ -1490,7 +1490,7 @@
         },
         {
           "_postman_id": "fcde5555-4516-fafd-49a1-00ff523431dd",
-          "name": "CreateNewProjectV3 - Failure Not Existing User",
+          "name": "CreateNewProject - Failure Not Existing User",
           "event": [
             {
               "listen": "test",

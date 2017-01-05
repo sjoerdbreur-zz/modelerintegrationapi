@@ -922,7 +922,9 @@
                   "",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  ""
+                  "console.log(res.Name)",
+                  "console.log(res.Value)",
+                  "console.log(res.ReasonFeatureNotActive)"
                 ]
               }
             }

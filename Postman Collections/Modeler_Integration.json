@@ -867,7 +867,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Missing value for ModelerVersion\""
+                  "tests[\"Faultstring states ModelerVersion missing\"] = res.faultstring === \"Missing value for ModelerVersion\""
                 ]
               }
             }

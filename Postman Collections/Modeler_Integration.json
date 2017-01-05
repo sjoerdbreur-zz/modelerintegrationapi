@@ -277,7 +277,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Internal server error\""
+                  "tests[\"Faultstring states Internal Server Error\"] = res.faultstring === \"Internal server error\""
                 ]
               }
             }

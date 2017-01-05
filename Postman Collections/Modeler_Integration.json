@@ -923,12 +923,7 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
                   "tests[\"Found EnableBidi flag which is active\"] = res.Name === \"EnableBiDi\" && res.Value === \"Enabled\";",
-                  "tests[\"EnableBidi \"] = res.Name === \"EnableBiDi\";",
-                  "tests[\"Found EnableBidi flag\"] = res.Name === \"EnableBiDi\";",
-                  "",
-                  "console.log(res.Name)",
-                  "console.log(res.Value)",
-                  "console.log(res.ReasonFeatureNotActive)"
+                  ""
                 ]
               }
             }

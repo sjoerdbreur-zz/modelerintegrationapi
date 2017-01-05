@@ -1634,7 +1634,7 @@
         },
         {
           "_postman_id": "ab665503-f9a4-6140-f0d9-9818c6746a9c",
-          "name": "CreateNewProjectV3 - Failure Missing ModelerVersion",
+          "name": "CreateNewProject - Failure Missing ModelerVersion",
           "event": [
             {
               "listen": "test",

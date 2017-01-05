@@ -405,7 +405,7 @@
         },
         {
           "_postman_id": "8feb586a-dd6d-3519-fe0f-f203bd882105",
-          "name": "GetProjectsV2 - Failure Not Existing User",
+          "name": "GetProjects - Failure Not Existing User",
           "event": [
             {
               "listen": "test",

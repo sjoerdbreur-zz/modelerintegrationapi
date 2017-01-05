@@ -2368,7 +2368,7 @@
       "item": [
         {
           "_postman_id": "a1c72c6f-6cd4-507d-f666-dd38f9a324d5",
-          "name": "SetStoryStatusV3 - Happy Path",
+          "name": "SetStoryStatus - Happy Path",
           "event": [
             {
               "listen": "test",

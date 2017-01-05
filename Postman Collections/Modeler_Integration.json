@@ -850,7 +850,7 @@
         },
         {
           "_postman_id": "01a7e612-6132-0fa7-76fd-eef9d425c325",
-          "name": "GetProjectsV3 - Failure Missing ModelerVersion",
+          "name": "GetStoriesV3 - Failure Missing ModelerVersion",
           "event": [
             {
               "listen": "test",

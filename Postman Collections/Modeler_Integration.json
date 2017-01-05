@@ -2583,7 +2583,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states item is null\"] = res.faultstring === \"Unknown item: null\";"
+                  "tests[\"Faultstring states item is null\"] = res.faultstring === \"StoryNr was not specified.\";"
                 ]
               }
             }

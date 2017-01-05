@@ -1874,7 +1874,7 @@
         },
         {
           "_postman_id": "2dbaf544-78f6-e2d6-5844-d56f5542c2e3",
-          "name": "GetStories - Failure Missing ModelerVersion",
+          "name": "GetStories - Failure ModelerVersion should result in Internal Server Error",
           "event": [
             {
               "listen": "test",

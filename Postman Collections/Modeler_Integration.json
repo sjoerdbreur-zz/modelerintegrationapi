@@ -549,7 +549,7 @@
         },
         {
           "_postman_id": "eb3aedbf-7698-4a09-6d0a-568b2f415e1a",
-          "name": "GetProjectsV2 - ModelerVersion gives internal server error in older version",
+          "name": "GetProjects - ModelerVersion gives internal server error in older version",
           "event": [
             {
               "listen": "test",

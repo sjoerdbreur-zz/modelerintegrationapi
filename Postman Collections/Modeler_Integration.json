@@ -1406,7 +1406,7 @@
                   "var validResponse = true;",
                   "",
                   "var res = jsonObject || {};",
-                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:CreateNewProjectV3Response\", \"Project\", \"FeatureFlags\", \"FeatureFlag\"];",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:CreateNewProjectResponse\", \"Project\"];",
                   "keys.forEach(function (k) {",
                   "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
                   "        res = res[k];",
@@ -1417,7 +1417,6 @@
                   "",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Found EnableBidi flag which is active\"] = res.Name === \"EnableBiDi\" && res.Value === \"Enabled\";",
                   ""
                 ]
               }
@@ -1435,7 +1434,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:CreateNewProjectV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <Name>New Project</Name>\r\n         <Summary>This is a new test project.</Summary>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:CreateNewProjectV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:CreateNewProject>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <Name>New Project</Name>\r\n         <Summary>This is a new test project.</Summary>\r\n      </mod:CreateNewProject>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },

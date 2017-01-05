@@ -1216,7 +1216,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid credentials\""
+                  "tests[\"Faultstring states Invalid credentials\"] = res.faultstring === \"Invalid credentials\""
                 ]
               }
             }

@@ -899,7 +899,7 @@
       "item": [
         {
           "_postman_id": "2eceb192-9f79-2018-d1a1-8feeb7956445",
-          "name": "CreateProjectV3 - Happy Path",
+          "name": "CreateNewProjectV3 - Happy Path",
           "event": [
             {
               "listen": "test",

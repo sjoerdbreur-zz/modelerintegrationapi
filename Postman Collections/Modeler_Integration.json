@@ -2512,7 +2512,7 @@
         },
         {
           "_postman_id": "e7403bb6-ce86-d37c-4bc0-9530a0734564",
-          "name": "SetStoryStatusV3 - Failure Incorrect User Password",
+          "name": "SetStoryStatus - Failure Incorrect User Password",
           "event": [
             {
               "listen": "test",

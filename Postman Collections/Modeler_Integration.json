@@ -1139,7 +1139,7 @@
         },
         {
           "_postman_id": "200c5df7-d93e-324b-7372-304fea4c5f28",
-          "name": "GetProjectsV3 - Failure Missing ModelerVersion",
+          "name": "CreateProjectV3 - Failure Missing ModelerVersion",
           "event": [
             {
               "listen": "test",

@@ -995,7 +995,7 @@
         },
         {
           "_postman_id": "11eafe09-46c7-3237-db59-d48cd089e84a",
-          "name": "GetProjectsV3 - Failure Not Existing User",
+          "name": "CreateProjectV3 - Failure Not Existing User",
           "event": [
             {
               "listen": "test",

@@ -940,7 +940,7 @@
         },
         {
           "_postman_id": "1a6797d8-bb58-2d15-89e9-c4f3658736c1",
-          "name": "GetStoriesV3 - Failure Incorrect ProjectID copy",
+          "name": "GetStoriesV3 - Failure Missing ProjectID",
           "event": [
             {
               "listen": "test",

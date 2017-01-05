@@ -1634,7 +1634,7 @@
         },
         {
           "_postman_id": "ab665503-f9a4-6140-f0d9-9818c6746a9c",
-          "name": "CreateNewProject - Failure Missing ModelerVersion",
+          "name": "CreateNewProject - Failure ModelerVersion results in Internal Server error",
           "event": [
             {
               "listen": "test",

@@ -1394,7 +1394,7 @@
       "item": [
         {
           "_postman_id": "418683a3-6a1e-c2a2-8597-544a52b6ab19",
-          "name": "CreateNewProjectV3 - Happy Path",
+          "name": "CreateNewProject - Happy Path",
           "event": [
             {
               "listen": "test",

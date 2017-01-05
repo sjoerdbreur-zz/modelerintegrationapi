@@ -1538,7 +1538,7 @@
         },
         {
           "_postman_id": "7c76740c-fb27-8854-cc78-055318b241c6",
-          "name": "CreateNewProjectV3 - Failure Missing Password",
+          "name": "CreateNewProject - Failure Missing Password",
           "event": [
             {
               "listen": "test",

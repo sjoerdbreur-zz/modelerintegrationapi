@@ -1826,7 +1826,7 @@
         },
         {
           "_postman_id": "79d6b430-dd40-1e75-23ea-7e26dd557389",
-          "name": "GetProjectsV3 - Failure Missing Username",
+          "name": "GetStories - Failure Missing Username",
           "event": [
             {
               "listen": "test",

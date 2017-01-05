@@ -1120,7 +1120,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid value for parameter 'Status'\""
+                  "tests[\"Faultstring states ModelerVersion missing\"] = res.faultstring === \"Missing value for ModelerVersion\";"
                 ]
               }
             }
@@ -1137,7 +1137,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatusV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <StoryNr>{{StoryNr}}</StoryNr>\r\n         <Status>FALSE</Status>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:SetStoryStatusV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatusV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <StoryNr>{{StoryNr}}</StoryNr>\r\n         <Status>Open</Status>\r\n      </mod:SetStoryStatusV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },

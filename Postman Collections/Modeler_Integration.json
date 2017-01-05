@@ -1072,7 +1072,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid value for parameter 'Status'\""
+                  "tests[\"Faultstring states Invalid value\"] = res.faultstring === \"Invalid value for parameter 'Status'\""
                 ]
               }
             }

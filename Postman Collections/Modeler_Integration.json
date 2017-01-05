@@ -8,12 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "0f6b83e5-51f8-a052-9896-8566d9a68087",
-      "name": "SetStoryStatus",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "11073307-896e-c02c-b17f-66fff9dfa019",
       "name": "GetProjectsV2",
       "description": "",

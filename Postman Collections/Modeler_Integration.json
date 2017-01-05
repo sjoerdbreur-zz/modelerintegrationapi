@@ -1289,7 +1289,7 @@
         },
         {
           "_postman_id": "18d3f534-ac68-843a-6604-23b6729d3077",
-          "name": "GetStoriesV3 - Failure Incorrect ProjectID copy",
+          "name": "SetStoryStatusV3 - Failure Incorrect ProjectID copy",
           "event": [
             {
               "listen": "test",

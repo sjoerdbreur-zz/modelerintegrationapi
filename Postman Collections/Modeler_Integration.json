@@ -989,6 +989,12 @@
       ]
     },
     {
+      "_postman_id": "b961bfc1-190c-1c69-1f54-59f1b9058045",
+      "name": "SetStoryStatusV3",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "bdcf4c50-7c6a-2894-7b04-6c562e388a79",
       "name": "GetProjectsV3",
       "description": "",
@@ -1922,7 +1928,7 @@
         },
         {
           "_postman_id": "c2453809-e500-5edc-432f-756fa03d6723",
-          "name": "GetStoriesV3 - Failure Incorrect ProjectID",
+          "name": "GetStories - Failure Incorrect ProjectID",
           "event": [
             {
               "listen": "test",

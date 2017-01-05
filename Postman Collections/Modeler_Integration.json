@@ -2704,7 +2704,7 @@
         },
         {
           "_postman_id": "fc634f22-83c5-4724-0337-84110cdad95b",
-          "name": "SetStoryStatus - Happy Path copy",
+          "name": "SetStoryStatus - Failure ModelerVersion should result in internal server error",
           "event": [
             {
               "listen": "test",

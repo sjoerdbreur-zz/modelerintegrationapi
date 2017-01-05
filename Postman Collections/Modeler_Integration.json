@@ -1145,7 +1145,7 @@
         },
         {
           "_postman_id": "53b98fad-d10d-7072-9849-b90a374c06f8",
-          "name": "SetStoryStatusV3 - Failure invalid status copy",
+          "name": "SetStoryStatusV3 - Failure Incorrect User Password",
           "event": [
             {
               "listen": "test",

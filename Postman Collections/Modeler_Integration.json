@@ -1628,6 +1628,397 @@
       ]
     },
     {
+      "_postman_id": "c6193606-85f0-773e-3865-b230a6f7534e",
+      "name": "GetStoriesV3 copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "43a12360-5182-605f-6d1e-5da3c017906c",
+          "name": "GetStoriesV3 - Happy Path",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:GetStoriesV3Response\", \"Items\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "887b3796-3a7c-2f75-9d06-1a3dd0769ddb",
+          "name": "GetProjectsV3 - Failure Incorrect User Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid credentials\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>IncorrectPassword</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9b14e7af-d997-8f9c-1032-d16e66acab1a",
+          "name": "GetProjectsV3 - Failure Not Existing User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid credentials\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>NotExistingUsername</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fc727748-163e-bd11-d81b-6d27f3eadd99",
+          "name": "GetProjectsV3 - Failure Missing Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid credentials\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "79d6b430-dd40-1e75-23ea-7e26dd557389",
+          "name": "GetProjectsV3 - Failure Missing Username",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid credentials\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2dbaf544-78f6-e2d6-5844-d56f5542c2e3",
+          "name": "GetProjectsV3 - Failure Missing ModelerVersion",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states ModelerVersion missing\"] = res.faultstring === \"Missing value for ModelerVersion\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c2453809-e500-5edc-432f-756fa03d6723",
+          "name": "GetStoriesV3 - Failure Incorrect ProjectID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Project with id 'IncorrectProjectID' is not available.\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>IncorrectProjectID</ProjectID>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3a050ffe-f70b-ef54-61ad-4f8e54d89feb",
+          "name": "GetStoriesV3 - Failure Missing ProjectID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Project with id 'null' is not available.\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStoriesV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ModelerVersion>7.0.0</ModelerVersion>\r\n      </mod:GetStoriesV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "e582574f-6426-ddd7-217f-f514851b3e3d",
       "name": "General service authentication failure tests",
       "description": "",

@@ -1634,7 +1634,7 @@
       "item": [
         {
           "_postman_id": "43a12360-5182-605f-6d1e-5da3c017906c",
-          "name": "GetStoriesV3 - Happy Path",
+          "name": "GetStories - Happy Path",
           "event": [
             {
               "listen": "test",

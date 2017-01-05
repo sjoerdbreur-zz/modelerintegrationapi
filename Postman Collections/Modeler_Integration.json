@@ -1193,7 +1193,7 @@
         },
         {
           "_postman_id": "a53f0be4-c7ff-89fc-93c5-21b96b853911",
-          "name": "SetStoryStatusV3 - Failure Incorrect User Password copy",
+          "name": "SetStoryStatusV3 - Failure Not Existing User",
           "event": [
             {
               "listen": "test",

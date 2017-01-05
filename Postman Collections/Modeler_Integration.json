@@ -2416,7 +2416,7 @@
         },
         {
           "_postman_id": "b4079e31-0c85-3978-02c7-908e44cf5b0a",
-          "name": "SetStoryStatusV3 - Failure invalid status",
+          "name": "SetStoryStatus - Failure invalid status",
           "event": [
             {
               "listen": "test",

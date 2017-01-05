@@ -2464,7 +2464,7 @@
         },
         {
           "_postman_id": "b79f9b80-aff8-3aa0-9c08-e52fa6cce45b",
-          "name": "SetStoryStatusV3 - Failure Missing ModelerVersion",
+          "name": "SetStoryStatus - Failure Missing ModelerVersion",
           "event": [
             {
               "listen": "test",

@@ -2006,7 +2006,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Project with id 'IncorrectProjectID' is not available.\""
+                  "tests[\"Faultstring states project not available\"] = res.faultstring === \"Project with id 'IncorrectProjectID' is not available.\""
                 ]
               }
             }

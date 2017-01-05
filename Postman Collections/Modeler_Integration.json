@@ -616,7 +616,7 @@
                   "var validResponse = true;",
                   "",
                   "var res = jsonObject || {};",
-                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:GetStoriesV3Response\", \"Stories\"];",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:GetStoriesV3Response\", \"Items\"];",
                   "keys.forEach(function (k) {",
                   "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
                   "        res = res[k];",

@@ -1211,7 +1211,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Invalid credentials\""
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"The provided name was not accepted by the Dev Portal: App name is required.\""
                 ]
               }
             }

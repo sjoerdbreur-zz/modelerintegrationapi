@@ -546,6 +546,54 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "8b1805a5-66b3-c33f-11f5-fce2d6def249",
+          "name": "GetProjectsV3 - Failure Missing ModelerVersion copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states Login failed\"] = res.faultstring === \"Missing value for ModelerVersion\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetProjectsV3>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n      </mod:GetProjectsV3>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },

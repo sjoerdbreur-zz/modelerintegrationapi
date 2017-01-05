@@ -1778,7 +1778,7 @@
         },
         {
           "_postman_id": "fc727748-163e-bd11-d81b-6d27f3eadd99",
-          "name": "GetProjectsV3 - Failure Missing Password",
+          "name": "GetStories - Failure Missing Password",
           "event": [
             {
               "listen": "test",

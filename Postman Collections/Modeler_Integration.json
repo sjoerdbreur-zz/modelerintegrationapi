@@ -700,7 +700,7 @@
         },
         {
           "_postman_id": "8b3e3eb9-3b0f-b3e7-41bd-15b094233be2",
-          "name": "GetProjectsV3 - Failure Not Existing User",
+          "name": "GetStoriesV3 - Failure Not Existing User",
           "event": [
             {
               "listen": "test",

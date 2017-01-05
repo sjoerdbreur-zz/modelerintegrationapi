@@ -991,7 +991,14 @@
             "description": ""
           },
           "response": []
-        },
+        }
+      ]
+    },
+    {
+      "_postman_id": "b961bfc1-190c-1c69-1f54-59f1b9058045",
+      "name": "SetStoryStatusV3",
+      "description": "",
+      "item": [
         {
           "_postman_id": "71712ed5-d61b-bd49-cf25-95febb76575d",
           "name": "GetStoriesV3 - Happy Path copy",
@@ -1041,12 +1048,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "b961bfc1-190c-1c69-1f54-59f1b9058045",
-      "name": "SetStoryStatusV3",
-      "description": "",
-      "item": []
     },
     {
       "_postman_id": "bdcf4c50-7c6a-2894-7b04-6c562e388a79",

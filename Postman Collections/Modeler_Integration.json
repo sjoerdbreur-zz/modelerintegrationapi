@@ -1682,7 +1682,7 @@
         },
         {
           "_postman_id": "887b3796-3a7c-2f75-9d06-1a3dd0769ddb",
-          "name": "GetProjectsV3 - Failure Incorrect User Password",
+          "name": "GetProjects - Failure Incorrect User Password",
           "event": [
             {
               "listen": "test",

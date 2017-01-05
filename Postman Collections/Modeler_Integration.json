@@ -802,7 +802,7 @@
         },
         {
           "_postman_id": "46abf820-b016-b7e7-fbaf-dcba19e4600e",
-          "name": "GetProjectsV3 - Failure Missing Username",
+          "name": "GetStoriesV3 - Failure Missing Username",
           "event": [
             {
               "listen": "test",

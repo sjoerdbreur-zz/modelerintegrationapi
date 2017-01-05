@@ -2656,7 +2656,7 @@
         },
         {
           "_postman_id": "1a005153-b9c0-7e5b-ccf5-d31ca333f8d4",
-          "name": "SetStoryStatusV3 - Failure Incorrect ProjectID",
+          "name": "SetStoryStatus - Failure Incorrect ProjectID",
           "event": [
             {
               "listen": "test",

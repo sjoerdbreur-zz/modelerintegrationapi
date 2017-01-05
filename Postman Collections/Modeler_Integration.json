@@ -309,7 +309,7 @@
       "item": [
         {
           "_postman_id": "1723e24c-9aef-83c6-0654-94928eca9c47",
-          "name": "GetProjectsV2 - Happy Path",
+          "name": "GetProjects - Happy Path",
           "event": [
             {
               "listen": "test",

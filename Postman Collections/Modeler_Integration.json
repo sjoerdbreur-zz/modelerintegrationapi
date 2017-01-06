@@ -1682,7 +1682,7 @@
         },
         {
           "_postman_id": "439223fc-6beb-6c8f-6c9f-2d0bd3440f14",
-          "name": "CreateNewProjectV3 - Happy Path copy",
+          "name": "CreateNewProjectV3 - Happy Path No Summary",
           "event": [
             {
               "listen": "test",

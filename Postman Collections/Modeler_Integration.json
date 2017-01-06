@@ -1376,6 +1376,54 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "2a170156-b0a6-4613-c276-a782fcf4284c",
+          "name": "SetStoryStatus - Failure Project No Access copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states project not available\"] = res.faultstring === \"Project with id 'IncorrectProjectID' is not available.\""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatus>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>IncorrectProjectID</ProjectID>\r\n         <Status>Open</Status>\r\n      </mod:SetStoryStatus>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -2850,54 +2898,6 @@
         {
           "_postman_id": "89d52b01-85f1-fb87-4cbe-0e09d7ee558c",
           "name": "SetStoryStatus - Failure Project No Access",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonObject = xml2Json(responseBody);",
-                  "",
-                  "var validResponse = true;",
-                  "",
-                  "var res = jsonObject || {};",
-                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
-                  "keys.forEach(function (k) {",
-                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
-                  "        res = res[k];",
-                  "    } else {",
-                  "        validResponse = false;",
-                  "    }",
-                  "});",
-                  "",
-                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
-                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states project not available\"] = res.faultstring === \"Project with id 'IncorrectProjectID' is not available.\""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/xml",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatus>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>IncorrectProjectID</ProjectID>\r\n         <Status>Open</Status>\r\n      </mod:SetStoryStatus>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "2a170156-b0a6-4613-c276-a782fcf4284c",
-          "name": "SetStoryStatus - Failure Project No Access copy",
           "event": [
             {
               "listen": "test",

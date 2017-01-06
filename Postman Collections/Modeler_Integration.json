@@ -2422,7 +2422,7 @@
                   "var validResponse = true;",
                   "",
                   "var res = jsonObject || {};",
-                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:GetStoriesResponse\", \"Items\"];",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
                   "keys.forEach(function (k) {",
                   "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
                   "        res = res[k];",
@@ -2431,9 +2431,9 @@
                   "    }",
                   "});",
                   "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  ""
+                  "tests[\"Faultstring states project not available\"] = res.faultstring === \"Project with id 'IncorrectProjectID' is not available.\""
                 ]
               }
             }

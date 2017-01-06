@@ -1379,7 +1379,7 @@
         },
         {
           "_postman_id": "2a170156-b0a6-4613-c276-a782fcf4284c",
-          "name": "SetStoryStatus - Failure Project No Access copy",
+          "name": "SetStoryStatusV3 - Failure Project No Access",
           "event": [
             {
               "listen": "test",

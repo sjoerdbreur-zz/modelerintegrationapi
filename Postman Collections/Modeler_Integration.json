@@ -988,7 +988,7 @@
         },
         {
           "_postman_id": "73765819-6861-37b9-94e6-391831203491",
-          "name": "GetStoriesV3 - Happy Path copy",
+          "name": "GetStoriesV3 - Failure Project No Access",
           "event": [
             {
               "listen": "test",

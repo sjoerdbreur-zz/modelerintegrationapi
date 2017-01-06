@@ -1033,6 +1033,54 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "066379b5-91ee-6bb3-c2f7-2fde358cd39c",
+          "name": "SetStoryStatus - Failure Missing StoryNr copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  "tests[\"Faultstring states item is null\"] = res.faultstring === \"StoryNr was not specified.\";"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatus>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <Status>Open</Status>\r\n      </mod:SetStoryStatus>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -3034,54 +3082,6 @@
             "body": {
               "mode": "raw",
               "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatus>\r\n         <Password>{{EndUserPassword}}</Password>\r\n         <Username>{{EndUserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <Status>Open</Status>\r\n      </mod:SetStoryStatus>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "066379b5-91ee-6bb3-c2f7-2fde358cd39c",
-          "name": "SetStoryStatus - Failure Missing StoryNr copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonObject = xml2Json(responseBody);",
-                  "",
-                  "var validResponse = true;",
-                  "",
-                  "var res = jsonObject || {};",
-                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"soap:Fault\"];",
-                  "keys.forEach(function (k) {",
-                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
-                  "        res = res[k];",
-                  "    } else {",
-                  "        validResponse = false;",
-                  "    }",
-                  "});",
-                  "",
-                  "tests[\"Status code is 500\"] = responseCode.code === 500;",
-                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states item is null\"] = res.faultstring === \"StoryNr was not specified.\";"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/xml",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:SetStoryStatus>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n         <Status>Open</Status>\r\n      </mod:SetStoryStatus>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },

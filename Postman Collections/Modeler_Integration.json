@@ -748,7 +748,7 @@
         },
         {
           "_postman_id": "066379b5-91ee-6bb3-c2f7-2fde358cd39c",
-          "name": "SetStoryStatus - Failure Missing StoryNr copy",
+          "name": "SetStoryStatusV3 - Failure Missing StoryNr",
           "event": [
             {
               "listen": "test",

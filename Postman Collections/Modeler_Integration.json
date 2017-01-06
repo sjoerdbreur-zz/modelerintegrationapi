@@ -2920,7 +2920,7 @@
                   "",
                   "tests[\"Status code is 500\"] = responseCode.code === 500;",
                   "tests[\"Valid SOAP/XML response\"] = validResponse;",
-                  "tests[\"Faultstring states project not available\"] = res.faultstring === \"Project with id '59aeec84-4893-4506-8e44-ee97d53a6176' is not available.\""
+                  "tests[\"Faultstring states project not available\"] = res.faultstring === \"Project with id '\" + environment[\"ProjectIDNoAccess\"] + \"' is not available.\""
                 ]
               }
             }

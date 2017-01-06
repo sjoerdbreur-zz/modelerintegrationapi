@@ -2407,6 +2407,54 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "c6983e0d-fa6d-b6d3-df47-56997a1b69c1",
+          "name": "GetStories - Happy Path copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonObject = xml2Json(responseBody);",
+                  "",
+                  "var validResponse = true;",
+                  "",
+                  "var res = jsonObject || {};",
+                  "var keys = [ \"soap:Envelope\", \"soap:Body\", \"tns:GetStoriesResponse\", \"Items\"];",
+                  "keys.forEach(function (k) {",
+                  "    if (validResponse && typeof res[k] !== \"undefined\" && res[k] !== null) {",
+                  "        res = res[k];",
+                  "    } else {",
+                  "        validResponse = false;",
+                  "    }",
+                  "});",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Valid SOAP/XML response\"] = validResponse;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{SprintrLocation}}/ws/ModelerIntegration",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://sprintr.com/modeler\">\r\n   <soapenv:Header>\r\n      <mod:authentication>\r\n         <username>{{ModelerUsername}}</username>\r\n         <password>{{ModelerPassword}}</password>\r\n      </mod:authentication>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <mod:GetStories>\r\n         <Password>{{UserPassword}}</Password>\r\n         <Username>{{UserUsername}}</Username>\r\n         <ProjectID>{{ProjectID}}</ProjectID>\r\n      </mod:GetStories>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },

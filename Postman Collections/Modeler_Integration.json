@@ -2945,7 +2945,7 @@
         },
         {
           "_postman_id": "ce53c0e8-8fbe-17ee-3360-d9a1f44aa409",
-          "name": "SetStoryStatus - Failure End User Not Allowed To Set Status",
+          "name": "SetStoryStatus - Failure End User No Access Rights",
           "event": [
             {
               "listen": "test",

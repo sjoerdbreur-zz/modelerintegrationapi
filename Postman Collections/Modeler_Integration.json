@@ -2410,7 +2410,7 @@
         },
         {
           "_postman_id": "c6983e0d-fa6d-b6d3-df47-56997a1b69c1",
-          "name": "GetStories - Happy Path copy",
+          "name": "GetStories - Failure Project No Access",
           "event": [
             {
               "listen": "test",

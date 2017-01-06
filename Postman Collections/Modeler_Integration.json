@@ -1427,7 +1427,7 @@
         },
         {
           "_postman_id": "135bae70-fb6d-53d1-5375-01241f3ab54c",
-          "name": "SetStoryStatus - Failure End User No Access Rights copy",
+          "name": "SetStoryStatusV3 - Failure End User No Access Rights",
           "event": [
             {
               "listen": "test",

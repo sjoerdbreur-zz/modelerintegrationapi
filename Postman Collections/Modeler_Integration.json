@@ -2959,7 +2959,7 @@
         },
         {
           "_postman_id": "9e962e48-7e79-d5f7-d428-2598ee8b61a6",
-          "name": "CreateNewProject - Happy Path copy",
+          "name": "CreateNewProject - Happy Path No Summary",
           "event": [
             {
               "listen": "test",

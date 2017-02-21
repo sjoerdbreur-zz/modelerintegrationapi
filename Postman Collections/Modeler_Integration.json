@@ -1,7 +1,7 @@
 {
   "variables": [],
   "info": {
-    "name": "Modeler Integration",
+    "name": "Modeler Integration API",
     "_postman_id": "9b3dfc11-924a-8102-e80c-8aca59178a0f",
     "description": "Modeler service used by the DM to integrate with Sprintr",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
